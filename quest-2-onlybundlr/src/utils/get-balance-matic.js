@@ -10,13 +10,5 @@ import { getBundlr } from "./get-bundlr";
  * @returns Balance loaded on the node for current user.
  */
 export const getBalanceMatic = async () => {
-	try {
-		// get a refernce to the WebBundlr singleton
-		const bundlr = await getBundlr();
-		const atomicBalance = await bundlr.getLoadedBalance();
-		return bundlr.utils.fromAtomic(atomicBalance).toString();
-	} catch (e) {
-		console.log("Error on getBalanceMatic ", e);
-	}
-	return "";
+	// BUILDOOOORS: Complete This
 };

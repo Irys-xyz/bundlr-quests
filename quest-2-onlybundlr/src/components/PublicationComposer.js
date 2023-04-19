@@ -10,7 +10,7 @@ const PublicationComposer = ({ publisher }) => {
 	const [fileToUpload, setFileToUpload] = useState(null);
 	const [fileType, setFileType] = useState();
 	const [caption, setCaption] = useState("");
-	const { execute: create, error, isPending } = useCreatePost({ publisher, upload });
+	// BUILDOOOORS: Complete This
 
 	// Called when the user selects a file to upload
 	const handleFile = async (e) => {
@@ -27,56 +27,7 @@ const PublicationComposer = ({ publisher }) => {
 
 	// Called when the user clicks "Post"
 	const createPublication = async () => {
-		setTxActive(true);
-		setMessage("");
-
-		if (fileToUpload) {
-			// image post
-			// STEP 1: Upload image
-			setMessage("Uploading image ....");
-			const imageUrl = await uploadImage(fileToUpload, fileType);
-			// STEP 2: Create post
-			setMessage("Creating image publication ....");
-			try {
-				await create({
-					content: caption,
-					contentFocus: ContentFocus.IMAGE,
-					locale: "en",
-					collect: {
-						type: CollectPolicyType.NO_COLLECT,
-					},
-					reference: { type: ReferencePolicyType.FOLLOWERS_ONLY }, // only followers can interact
-					media: [
-						{
-							url: imageUrl,
-							mimeType: fileType,
-						},
-					],
-				});
-				setCaption("");
-				setFileToUpload(null);
-				setFileType("");
-				setMessage("Publication posted.");
-			} catch (e) {
-				setMessage("Error on post " + e);
-			}
-		} else {
-			setMessage("Creating text publication ....");
-			// text post
-			try {
-				await create({
-					content: caption,
-					contentFocus: ContentFocus.TEXT,
-					locale: "en",
-					reference: { type: ReferencePolicyType.FOLLOWERS_ONLY }, // only followers can interact
-				});
-				setCaption("");
-				setMessage("Publication posted.");
-			} catch (e) {
-				setMessage("Error on post " + e);
-			}
-		}
-		setTxActive(false);
+		// BUILDOOOORS: Complete This
 	};
 
 	return (

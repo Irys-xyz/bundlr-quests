@@ -7,30 +7,12 @@ const ProfileSwitcher = ({ showCreateNew }) => {
 	const [txActive, setTxActive] = useState(false);
 	const [createProfileMode, setCreateProfileMode] = useState(false);
 	const [newProfileHandle, setNewProfileHandle] = useState("");
-	const { data: profiles, loading: profilesLoading, hasMore, next } = useProfilesOwnedByMe();
-	const { data: activeProfile, loading: activeProfileLoading } = useActiveProfile();
-	const { execute: switchProfile, isPending } = useActiveProfileSwitch();
 
-	const {
-		execute: createNewProfile,
-		error: createNewProfileError,
-		isPending: createNewProfilePending,
-	} = useCreateProfile();
+	// BUILDOOOORS: Complete This
 
 	// Called when the user clicks "save new profile"
 	const doCreateProfile = async () => {
-		setMessage("");
-		setTxActive(true);
-		try {
-			setMessage("Creating profile ...");
-			const tx = await createNewProfile(newProfileHandle);
-			setMessage("Profile created.");
-		} catch (e) {
-			setMessage("Error creating profile " + e);
-			console.log("Error on create profile ", e);
-		}
-		setTxActive(false);
-		setCreateProfileMode(false);
+		// BUILDOOOORS: Complete This
 	};
 
 	useEffect(() => {

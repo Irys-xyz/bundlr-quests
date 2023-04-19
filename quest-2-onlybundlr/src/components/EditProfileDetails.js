@@ -19,19 +19,8 @@ const EditProfileDetails = ({ profile }) => {
 	const [chargeCurrency, setChargeCurrency] = useState(0);
 	const [fileToUpload, setFileToUpload] = useState();
 	const [fileType, setFileType] = useState();
-	const { data: currencies, error: currenciesError, loading: currenciesLoading } = useCurrencies();
 
-	const {
-		execute: update,
-		error: updateError,
-		isPending: isUpdatePending,
-	} = useUpdateProfileDetails({ profile, upload });
-
-	const {
-		execute: updateFollowPolicy,
-		isPending: isUpdateFollowPolicyPending,
-		error: isUpdateFollowPolicyError,
-	} = useUpdateFollowPolicy({ profile });
+	// BUILDOOOORS: Complete This
 
 	useEffect(() => {
 		if (profile) {
@@ -68,62 +57,17 @@ const EditProfileDetails = ({ profile }) => {
 
 	// Called when the user clicks "save"
 	const doUpdateProfile = async () => {
-		setMessage("");
-		setTxActive(true);
-
-		setMessage("Updating profile information ...");
-
-		let coverPicture = "";
-		if (fileToUpload) {
-			setMessage("Uploading cover picture ...");
-			coverPicture = await uploadImage(fileToUpload, fileType);
-		} else {
-			coverPicture = profile.coverPicture?.original.url || null;
-		}
-		const attributes = {
-			location: "",
-			website: "",
-		};
-		setMessage("Uploading profile information ...");
-
-		await update({ name, bio, coverPicture, attributes });
-		setMessage("Profile updated.");
-		setTxActive(false);
-
-		// Only set the fee if a number greater than 0 is supplied
-		if (followFee && followFee > 0) {
-			await doUploadFollowPolicy();
-		}
+		// BUILDOOOORS: Complete This
 	};
 
 	// Sets up the follow policy object
 	function resolveFollowPolicy({ followPolicyType, amount, recipient }) {
-		if (followPolicyType === FollowPolicyType.CHARGE) {
-			return {
-				type: FollowPolicyType.CHARGE,
-				amount: amount,
-				recipient: recipient,
-			};
-		}
-
-		return {
-			type: FollowPolicyType[followPolicyType],
-		};
+		// BUILDOOOORS: Complete This
 	}
 
 	// Sets the fee to follow a profile
 	const doUploadFollowPolicy = async () => {
-		const recipient = profile.ownedBy;
-
-		const erc20 = currencies.find((c) => c.symbol === chargeCurrency);
-		const fee = Amount.erc20(erc20, followFee);
-		await updateFollowPolicy({
-			followPolicy: resolveFollowPolicy({
-				amount: fee,
-				followPolicyType: FollowPolicyType.CHARGE,
-				recipient,
-			}),
-		});
+		// BUILDOOOORS: Complete This
 	};
 
 	return (

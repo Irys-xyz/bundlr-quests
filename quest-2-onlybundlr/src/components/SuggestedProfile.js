@@ -2,16 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useProfile } from "@lens-protocol/react";
 
 const SuggestedProfile = ({ handle }) => {
-	const { data: profile, loading } = useProfile({ handle });
+	// BUILDOOOORS: Complete This
 	const [profilePicture, setProfilePicture] = useState("");
 	const [coverPicture, setCoverPicture] = useState("");
 
 	useEffect(() => {
-		if (profile) {
-			setProfilePicture(profile.picture?.original.url);
-			setCoverPicture(profile.coverPicture?.original.url);
-			console.log(profile);
-		}
+		// BUILDOOOORS: Complete This
 	}, [loading]);
 
 	return (

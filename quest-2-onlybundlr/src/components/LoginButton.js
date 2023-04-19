@@ -5,24 +5,11 @@ import { InjectedConnector } from "wagmi/connectors/injected";
 const LoginButton = () => {
 	const { execute: login, error: loginError, isPending: isLoginPending } = useWalletLogin();
 
-	const { isConnected } = useAccount();
-	const { disconnectAsync } = useDisconnect();
-
-	const { connectAsync } = useConnect({
-		connector: new InjectedConnector(),
-	});
+	// BUILDOOOORS: Complete This
 
 	// Called when the user clicks "login"
 	const onLoginClick = async () => {
-		if (isConnected) {
-			await disconnectAsync();
-		}
-
-		const { connector } = await connectAsync();
-		if (connector instanceof InjectedConnector) {
-			const signer = await connector.getSigner();
-			await login(signer);
-		}
+		// BUILDOOOORS: Complete This
 	};
 
 	return (

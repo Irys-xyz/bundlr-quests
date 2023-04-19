@@ -7,13 +7,8 @@ const EditProfilePicture = ({ profile }) => {
 	const [txActive, setTxActive] = useState(false);
 	const [fileToUpload, setFileToUpload] = useState();
 	const [fileType, setFileType] = useState();
-	const {
-		execute: updateProfileImage,
-		error: updateProfileImageError,
-		isPending: updateProfileImagePending,
-	} = useUpdateProfileImage({
-		profile,
-	});
+
+	// BUILDOOOORS: Complete This
 
 	// Called when the user selects a file to be uploaded
 	const handleFile = async (e) => {
@@ -26,24 +21,7 @@ const EditProfilePicture = ({ profile }) => {
 
 	// Called when the user clicks "upload"
 	const doUpdateProfilePicture = async () => {
-		setMessage("");
-		setTxActive(true);
-		if (!fileToUpload) {
-			setMessage("Please select an image first");
-			setTxActive(false);
-			return;
-		}
-
-		try {
-			setMessage("Uploading image ...");
-			const newProfileURL = await uploadImage(fileToUpload, fileType);
-			setMessage("Linking image with profile ...");
-			await updateProfileImage(newProfileURL);
-		} catch (e) {
-			console.log("Error on update ", e);
-		}
-		setMessage("Profile image uploded.");
-		setTxActive(false);
+		// BUILDOOOORS: Complete This
 	};
 
 	return (

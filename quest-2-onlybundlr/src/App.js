@@ -21,11 +21,7 @@ const client = createClient({
 	webSocketProvider,
 });
 
-const lensConfig = {
-	bindings: wagmiBindings(),
-	environment: staging,
-	sources: ["onlybundlr"],
-};
+// BUILDOOOORS: Complete This
 
 function App() {
 	return (
