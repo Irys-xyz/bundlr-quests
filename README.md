@@ -4,7 +4,7 @@ Welcome to [Bundlr Developer Quests](https://docs.bundlr.network/hands-on/quests
 
 This repository has two branches:
 
--   `main`: Contains fully functional versions of each quest. This branch is provided for reference only. It is not recommended that you clone this branch.
+-   `master`: Contains fully functional versions of each quest. This branch is provided for reference only. It is not recommended that you clone this branch.
 -   `framework`: Contains a partially built version of each quest. Clone this branch and finish the quest by following along with written or video tutorial.
 
 ## Quest 1: Bundlr SDK
