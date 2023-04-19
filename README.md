@@ -13,5 +13,6 @@ Coming soon
 
 ## Quest 2: OnlyBundlr
 
-[Quest](/hands-on/quests/bundlr-lens-quest) | [Demo](https://vercel.com)
+[Quest](https://docs.bundlr.network/hands-on/quests/bundlr-lens-quest) | [Demo](https://vercel.com)
+
 Build OnlyBundlr, a social dApp for the creator economy using Bundlr and Lens. Monetize and share content with ease, and level up your development skills.
