@@ -7,7 +7,9 @@ import ProfileSwitcher from "../components/ProfileSwitcher";
 import { SiSpringCreators } from "react-icons/si";
 
 const ContentFeedPage = () => {
-	// BUILDOOOORS: Complete This
+	const { data: activeProfile, loading: profileLoading } = useActiveProfile();
+	const { login, error: loginError, isPending: isLoginPending } = useWalletLogin();
+	const { isConnected } = useAccount();
 
 	return (
 		<div className="flex flex-col w-3/6 bg-background px-5">
