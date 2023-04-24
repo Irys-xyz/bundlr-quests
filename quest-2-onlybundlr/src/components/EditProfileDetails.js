@@ -20,7 +20,19 @@ const EditProfileDetails = ({ profile }) => {
 	const [fileToUpload, setFileToUpload] = useState();
 	const [fileType, setFileType] = useState();
 
-	// BUILDOOOORS: Complete This
+	const { data: currencies, error: currenciesError, loading: currenciesLoading } = useCurrencies();
+
+	const {
+		execute: update,
+		error: updateError,
+		isPending: isUpdatePending,
+	} = useUpdateProfileDetails({ profile, upload });
+
+	const {
+		execute: updateFollowPolicy,
+		isPending: isUpdateFollowPolicyPending,
+		error: isUpdateFollowPolicyError,
+	} = useUpdateFollowPolicy({ profile });
 
 	useEffect(() => {
 		if (profile) {
