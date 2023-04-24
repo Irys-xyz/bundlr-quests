@@ -22,7 +22,7 @@ const client = createClient({
 });
 
 // BUILDOOOORS: Complete This
-
+const lensConfig = {};
 function App() {
 	return (
 		<WagmiConfig client={client}>
