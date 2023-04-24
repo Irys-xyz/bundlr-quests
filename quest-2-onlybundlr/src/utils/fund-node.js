@@ -5,8 +5,6 @@ import { getBundlr } from "./get-bundlr";
  * Note: The currency (token) used is the currency specified when
  * creating the Bundlr object in the file `get-bundlr.js`.
  *
- * Docs: http://docs.bundlr.network/developer-docs/sdk/funding-node
- *
  * @param {*} fundAmount About to fund, value in standard units. Value will automatically
  * be coverted to atomic units.
  * @returns "Node funded" if successful or an error message.

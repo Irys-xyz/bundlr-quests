@@ -1,6 +1,5 @@
 import { getBundlr } from "./get-bundlr";
 
-// called to upload metadata to Bundlr, which is then passed on to Lens
 /**
  * Function to upload metadata to Bundlr. The function signature is defined
  * by Lens. The Lens React hooks automatically generate metadata, which
