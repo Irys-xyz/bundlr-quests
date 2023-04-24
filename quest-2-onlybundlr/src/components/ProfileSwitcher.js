@@ -8,7 +8,15 @@ const ProfileSwitcher = ({ showCreateNew }) => {
 	const [createProfileMode, setCreateProfileMode] = useState(false);
 	const [newProfileHandle, setNewProfileHandle] = useState("");
 
-	// BUILDOOOORS: Complete This
+	const { data: profiles, loading: profilesLoading, hasMore, next } = useProfilesOwnedByMe();
+	const { data: activeProfile, loading: activeProfileLoading } = useActiveProfile();
+	const { execute: switchProfile, isPending } = useActiveProfileSwitch();
+
+	const {
+		execute: createNewProfile,
+		error: createNewProfileError,
+		isPending: createNewProfilePending,
+	} = useCreateProfile();
 
 	// Called when the user clicks "save new profile"
 	const doCreateProfile = async () => {
