@@ -10,6 +10,15 @@ const ContentFeedPage = () => {
 	const { data: activeProfile, loading: profileLoading } = useActiveProfile();
 	const { login, error: loginError, isPending: isLoginPending } = useWalletLogin();
 	const { isConnected } = useAccount();
+	const {
+		data: feed,
+		loading,
+		hasMore,
+		next,
+	} = useFeed({
+		profileId: activeProfile?.id,
+		limit: 10,
+	});
 
 	return (
 		<div className="flex flex-col w-3/6 bg-background px-5">
