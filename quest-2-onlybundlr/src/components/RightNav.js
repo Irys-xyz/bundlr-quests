@@ -10,6 +10,7 @@ const RightNav = () => {
 
 	useEffect(() => {
 		// Hardcoded list of profiles to follow
+		// BUILDOOOORS: Add your own profiles to this list
 		const profiles = [
 			"llamakahlo.test",
 			"llamaanime.test",

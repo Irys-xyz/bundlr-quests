@@ -50,18 +50,7 @@ const ContentFeedPage = () => {
 								your feed appears to be empty, try following more accounts
 							</div>
 						))}
-					{feed &&
-						feed.map((publication, id) => {
-							return (
-								<Publication
-									key={publication.root.id}
-									content={publication.root.metadata?.content}
-									description={publication.root.metadata?.description}
-									media={publication.root.metadata?.media}
-									publisher={publication.root.profile}
-								/>
-							);
-						})}
+					{/* // BUILDOOOORS: Complete this */}
 				</div>
 			)}
 		</div>

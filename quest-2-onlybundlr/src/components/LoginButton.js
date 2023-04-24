@@ -14,15 +14,7 @@ const LoginButton = () => {
 
 	// Called when the user clicks "login"
 	const onLoginClick = async () => {
-		if (isConnected) {
-			await disconnectAsync();
-		}
-
-		const { connector } = await connectAsync();
-		if (connector instanceof InjectedConnector) {
-			const signer = await connector.getSigner();
-			await login(signer);
-		}
+		// BUILDOOOORS: Complete this
 	};
 
 	return (
